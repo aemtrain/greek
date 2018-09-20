@@ -1,0 +1,18 @@
+Authoring Filter Component
+<sly data-sly-test.price = "pricefilter"/>
+<sly data-sly-test.department = "departmentfilter"/>
+<sly data-sly-test.select = "${properties.select}"/>
+
+<sly data-sly-test = "${select == price}">
+
+<p>PriceFilter</p>
+<sly data-sly-include="${'/apps/aemtrain/components/content/filter/filtercomp/partials/pricefilter.html'}"/>
+
+</sly>
+
+<sly data-sly-test = "${select == department}">
+
+<p>DepartmentFilter</p>
+<sly data-sly-include="${'/apps/aemtrain/components/content/filter/filtercomp/partials/departmentfilter.html'}"/>
+
+</sly>
