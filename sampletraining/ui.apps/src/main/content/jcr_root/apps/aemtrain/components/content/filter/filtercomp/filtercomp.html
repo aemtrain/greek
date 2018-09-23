@@ -1,0 +1,22 @@
+
+<sly data-sly-test="${wcmmode.edit}">
+<h4>Authoring Filter Component</h4>
+</sly>
+
+<sly data-sly-use.filterobj = "org.aemtrain.sampletraining.core.components.MultiFieldUse">
+
+	<sly data-sly-list.selectedFilter = "${filterobj.filterSelected}">
+
+            <sly data-sly-test.filterSelected = "${filterobj.filterSelected[selectedFilter]['filterSelected']}"/>
+            <sly data-sly-test.titleLabel = "${filterobj.filterSelected[selectedFilter]['filterTitleLabel']}"/>
+            <sly data-sly-test.resetLabel = "${filterobj.filterSelected[selectedFilter]['filterResetLabel']}"/>
+            <sly data-sly-test.moreLabel = "${filterobj.filterSelected[selectedFilter]['filterMoreLabel']}"/>
+            <sly data-sly-test.componentScriptPath = "${'/apps/aemtrain/components/content/filter/filtercomp/partials/{0}.html' @ format = [filterSelected]}"/>
+			<input type="hidden" data-filter = "${filterSelected}" data-title = "${titleLabel}" data-reset = "${resetLabel}" data-more = "${moreLabel}"/>
+            <div id = ${filterSelected}>
+				<sly data-sly-include="${componentScriptPath}"/>
+            </div>
+
+	</sly>
+
+</sly>
