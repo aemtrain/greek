@@ -11,26 +11,68 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <select
+                    <facet-filter
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                        fieldLabel="Select"
-                        name="./select">
-                        <items jcr:primaryType="nt:unstructured">
-                            <none
-                                jcr:primaryType="nt:unstructured"
-                                text="None"
-                                value="none"/>
-                            <price
-                                jcr:primaryType="nt:unstructured"
-                                text="Price Filter"
-                                value="pricefilter"/>
-                            <department
-                                jcr:primaryType="nt:unstructured"
-                                text="Department Filter"
-                                value="departmentfilter"/>
-                        </items>
-                    </select>
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Filter Products">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./filterSelected">
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <select
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Select"
+                                            name="./filterSelected">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <none
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="None"
+                                                    value="none"/>
+                                                <price
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Price Filter"
+                                                    value="pricefilter"/>
+                                                <department
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Department Filter"
+                                                    value="departmentfilter"/>
+                                                <brand
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Brand Filter"
+                                                    value="brandfilter"/>
+                                                <nutrition
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Nutrition Filter"
+                                                    value="nutritionfilter"/>
+                                            </items>
+                                        </select>
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Filter title Label"
+                                            name="./filterTitleLabel"/>
+                                        <reset
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Reset filter label"
+                                            name="./filterResetLabel"/>
+                                        <more
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="More filter label"
+                                            name="./filterMoreLabel"/>
+                                    </items>
+                                </column>
+                            </items>
+                        </field>
+                    </facet-filter>
                 </items>
             </column>
         </items>
